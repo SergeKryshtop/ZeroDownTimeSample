@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Order]
+(
+    [Id] BIGINT NOT NULL PRIMARY KEY IDENTITY(1,1),
+
+)
