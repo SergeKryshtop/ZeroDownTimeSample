@@ -1,8 +1,37 @@
 ﻿CREATE TABLE [dbo].[Product]
 (
-    [Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    [Id] INT NOT NULL IdENTITY(1,1),
     [Name] NVARCHAR(128) NOT NULL,
+	[ProductNumber] [nvarchar](25) NOT NULL,
     [Description] nvarchar(max),
     [CategoryId] INT NOT NULL,
-    [Weight] DECIMAL(18,2)  NULL,
-)
+ 	[MakeFlag] bit NOT NULL CONSTRAINT [DF_Product_MakeFlag]  DEFAULT ((1)),
+	[FinishedGoodsFlag] bit NOT NULL CONSTRAINT [DF_Product_FinishedGoodsFlag]  DEFAULT ((1)),
+	[Color] [nvarchar](15) NULL,
+	[SafetyStockLevel] [smallint] NOT NULL,
+	[ReorderPoint] [smallint] NOT NULL,
+	[StandardCost] [money] NOT NULL,
+	[ListPrice] [money] NOT NULL,
+	[Size] [nvarchar](5) NULL,
+	[SizeUnitMeasureCode] [nchar](3) NULL,
+	[WeightUnitMeasureCode] [nchar](3) NULL,
+	[Weight] [decimal](8, 2) NULL,
+	[DaysToManufacture] [int] NOT NULL,
+	[ProductLine] [nchar](2) NULL,
+	[Class] [nchar](2) NULL,
+	[Style] [nchar](2) NULL,
+	[ProductSubCategoryId] [int] NULL,
+	[ProductModelId] [int] NULL,
+	[SellStartDate] [datetime] NOT NULL,
+	[SellEndDate] [datetime] NULL,
+	[DiscontinuedDate] [datetime] NULL,
+	[rowguid] [uniqueidentifier] ROWGUIdCOL  NOT NULL CONSTRAINT [DF_Product_rowguid]  DEFAULT (newid()),
+	[ModifiedDate] [datetime] NOT NULL  CONSTRAINT [DF_Product_ModifiedDate]  DEFAULT (getdate()),
+	CONSTRAINT [PK__Product] PRIMARY KEY CLUSTERED (Id ASC),
+	CONSTRAINT [FK__Product__ProductModel_ProductModelId] FOREIGN KEY([ProductModelId]) REFERENCES dbo.[ProductModel] (Id),
+	CONSTRAINT [FK__Product__ProductSubcategory_ProductSubcategoryId] FOREIGN KEY([ProductSubCategoryId]) REFERENCES dbo.[ProductSubCategory] (Id),
+	CONSTRAINT [FK__Product__UnitMeasure_SizeUnitMeasureCode] FOREIGN KEY([SizeUnitMeasureCode]) REFERENCES dbo.[UnitMeasure] ([UnitMeasureCode]),
+	CONSTRAINT [FK__Product__UnitMeasure_WeightUnitMeasureCode] FOREIGN KEY([WeightUnitMeasureCode]) REFERENCES dbo.[UnitMeasure] ([UnitMeasureCode])
+
+) ON [PRIMARY]
+

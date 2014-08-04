@@ -65,7 +65,10 @@
     <Build Include="Tables\OrderItem.sql" />
     <Build Include="Tables\ProductCategory.sql" />
     <Build Include="Tables\Product.sql" />
-    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Customer.sql" />
+    <Build Include="Tables\UnitMeasure.sql" />
+    <Build Include="Tables\ProductModel.sql" />
+    <Build Include="Tables\ProductSubCategory.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\Zdd.Database_20140803_14-00-44.dacpac" />

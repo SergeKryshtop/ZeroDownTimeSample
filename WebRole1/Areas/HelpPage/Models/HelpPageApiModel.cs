@@ -28,12 +28,12 @@ namespace WebRole1.Areas.HelpPage.Models
         /// <summary>
         /// Gets the sample requests associated with the API.
         /// </summary>
-        public IDictionary<MediaTypeHeaderValue, object> SampleRequests { get; private set; }
+        public Idictionary<MediaTypeHeaderValue, object> SampleRequests { get; private set; }
 
         /// <summary>
         /// Gets the sample responses associated with the API.
         /// </summary>
-        public IDictionary<MediaTypeHeaderValue, object> SampleResponses { get; private set; }
+        public Idictionary<MediaTypeHeaderValue, object> SampleResponses { get; private set; }
 
         /// <summary>
         /// Gets the error messages associated with this model.

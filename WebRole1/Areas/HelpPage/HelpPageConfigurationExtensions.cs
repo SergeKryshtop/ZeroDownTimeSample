@@ -20,9 +20,9 @@ namespace WebRole1.Areas.HelpPage
         /// </summary>
         /// <param name="config">The <see cref="HttpConfiguration"/>.</param>
         /// <param name="documentationProvider">The documentation provider.</param>
-        public static void SetDocumentationProvider(this HttpConfiguration config, IDocumentationProvider documentationProvider)
+        public static void SetDocumentationProvider(this HttpConfiguration config, IdocumentationProvider documentationProvider)
         {
-            config.Services.Replace(typeof(IDocumentationProvider), documentationProvider);
+            config.Services.Replace(typeof(IdocumentationProvider), documentationProvider);
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace WebRole1.Areas.HelpPage
         /// </summary>
         /// <param name="config">The <see cref="HttpConfiguration"/>.</param>
         /// <param name="sampleObjects">The sample objects.</param>
-        public static void SetSampleObjects(this HttpConfiguration config, IDictionary<Type, object> sampleObjects)
+        public static void SetSampleObjects(this HttpConfiguration config, Idictionary<Type, object> sampleObjects)
         {
             config.GetHelpPageSampleGenerator().SampleObjects = sampleObjects;
         }
@@ -184,7 +184,7 @@ namespace WebRole1.Areas.HelpPage
         /// Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
         /// </summary>
         /// <param name="config">The <see cref="HttpConfiguration"/>.</param>
-        /// <param name="apiDescriptionId">The <see cref="ApiDescription"/> ID.</param>
+        /// <param name="apiDescriptionId">The <see cref="ApiDescription"/> Id.</param>
         /// <returns>
         /// An <see cref="HelpPageApiModel"/>
         /// </returns>

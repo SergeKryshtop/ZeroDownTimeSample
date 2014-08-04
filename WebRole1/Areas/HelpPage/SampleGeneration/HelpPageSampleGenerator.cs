@@ -33,24 +33,24 @@ namespace WebRole1.Areas.HelpPage
         /// <summary>
         /// Gets CLR types that are used as the content of <see cref="HttpRequestMessage"/> or <see cref="HttpResponseMessage"/>.
         /// </summary>
-        public IDictionary<HelpPageSampleKey, Type> ActualHttpMessageTypes { get; internal set; }
+        public Idictionary<HelpPageSampleKey, Type> ActualHttpMessageTypes { get; internal set; }
 
         /// <summary>
         /// Gets the objects that are used directly as samples for certain actions.
         /// </summary>
-        public IDictionary<HelpPageSampleKey, object> ActionSamples { get; internal set; }
+        public Idictionary<HelpPageSampleKey, object> ActionSamples { get; internal set; }
 
         /// <summary>
         /// Gets the objects that are serialized as samples by the supported formatters.
         /// </summary>
-        public IDictionary<Type, object> SampleObjects { get; internal set; }
+        public Idictionary<Type, object> SampleObjects { get; internal set; }
 
         /// <summary>
         /// Gets the request body samples for a given <see cref="ApiDescription"/>.
         /// </summary>
         /// <param name="api">The <see cref="ApiDescription"/>.</param>
         /// <returns>The samples keyed by media type.</returns>
-        public IDictionary<MediaTypeHeaderValue, object> GetSampleRequests(ApiDescription api)
+        public Idictionary<MediaTypeHeaderValue, object> GetSampleRequests(ApiDescription api)
         {
             return GetSample(api, SampleDirection.Request);
         }
@@ -60,7 +60,7 @@ namespace WebRole1.Areas.HelpPage
         /// </summary>
         /// <param name="api">The <see cref="ApiDescription"/>.</param>
         /// <returns>The samples keyed by media type.</returns>
-        public IDictionary<MediaTypeHeaderValue, object> GetSampleResponses(ApiDescription api)
+        public Idictionary<MediaTypeHeaderValue, object> GetSampleResponses(ApiDescription api)
         {
             return GetSample(api, SampleDirection.Response);
         }
@@ -71,7 +71,7 @@ namespace WebRole1.Areas.HelpPage
         /// <param name="api">The <see cref="ApiDescription"/>.</param>
         /// <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
         /// <returns>The samples keyed by media type.</returns>
-        public virtual IDictionary<MediaTypeHeaderValue, object> GetSample(ApiDescription api, SampleDirection sampleDirection)
+        public virtual Idictionary<MediaTypeHeaderValue, object> GetSample(ApiDescription api, SampleDirection sampleDirection)
         {
             if (api == null)
             {

@@ -9,9 +9,9 @@ using System.Xml.XPath;
 namespace WebRole1.Areas.HelpPage
 {
     /// <summary>
-    /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+    /// A custom <see cref="IdocumentationProvider"/> that reads the API documentation from an XML documentation file.
     /// </summary>
-    public class XmlDocumentationProvider : IDocumentationProvider
+    public class XmlDocumentationProvider : IdocumentationProvider
     {
         private XPathNavigator _documentNavigator;
         private const string TypeExpression = "/doc/members/member[@name='T:{0}']";

@@ -3,7 +3,7 @@
     [OrderId] BIGINT NOT NULL,
     [ProductId]  INT NOT NULL,
     [Quatity] int NOT NULL,
-    
+    [Shipped] bit NULL,
     CONSTRAINT PK__OrderItem PRIMARY KEY CLUSTERED (OrderId, ProductId),
     CONSTRAINT FK__OrderItem__Order FOREIGN KEY(OrderId) REFERENCES dbo.[Order](Id) 
         ON DELETE NO ACTION ON UPDATE NO ACTION,

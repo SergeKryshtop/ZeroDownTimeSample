@@ -24,7 +24,7 @@ namespace WebRole1.Areas.HelpPage
         /// Arrays: arrays of simple types or complex types.
         /// Key value pairs: <see cref="KeyValuePair{TKey,TValue}"/>
         /// Tuples: <see cref="Tuple{T1}"/>, <see cref="Tuple{T1,T2}"/>, etc
-        /// Dictionaries: <see cref="IDictionary{TKey,TValue}"/> or anything deriving from <see cref="IDictionary{TKey,TValue}"/>.
+        /// Dictionaries: <see cref="Idictionary{TKey,TValue}"/> or anything deriving from <see cref="Idictionary{TKey,TValue}"/>.
         /// Collections: <see cref="IList{T}"/>, <see cref="IEnumerable{T}"/>, <see cref="ICollection{T}"/>, <see cref="IList"/>, <see cref="IEnumerable"/>, <see cref="ICollection"/> or anything deriving from <see cref="ICollection{T}"/> or <see cref="IList"/>.
         /// Queryables: <see cref="IQueryable"/>, <see cref="IQueryable{T}"/>.
         /// </summary>
@@ -55,12 +55,12 @@ namespace WebRole1.Areas.HelpPage
                     return GenerateGenericType(type, DefaultCollectionSize, createdObjectReferences);
                 }
 
-                if (type == typeof(IDictionary))
+                if (type == typeof(Idictionary))
                 {
                     return GenerateDictionary(typeof(Hashtable), DefaultCollectionSize, createdObjectReferences);
                 }
 
-                if (typeof(IDictionary).IsAssignableFrom(type))
+                if (typeof(Idictionary).IsAssignableFrom(type))
                 {
                     return GenerateDictionary(type, DefaultCollectionSize, createdObjectReferences);
                 }
@@ -144,13 +144,13 @@ namespace WebRole1.Areas.HelpPage
 
             if (genericArguments.Length == 2)
             {
-                if (genericTypeDefinition == typeof(IDictionary<,>))
+                if (genericTypeDefinition == typeof(Idictionary<,>))
                 {
                     Type dictionaryType = typeof(Dictionary<,>).MakeGenericType(genericArguments);
                     return GenerateDictionary(dictionaryType, collectionSize, createdObjectReferences);
                 }
 
-                Type closedDictionaryType = typeof(IDictionary<,>).MakeGenericType(genericArguments[0], genericArguments[1]);
+                Type closedDictionaryType = typeof(Idictionary<,>).MakeGenericType(genericArguments[0], genericArguments[1]);
                 if (closedDictionaryType.IsAssignableFrom(type))
                 {
                     return GenerateDictionary(type, collectionSize, createdObjectReferences);
