@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zdd.Domain", "ZddDomain\Zdd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zdd.Persistance", "Zdd.Persistance\Zdd.Persistance.csproj", "{35DF9716-88CF-40E3-9937-4900B34D5858}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zdd.Client", "Zdd.Client\Zdd.Client.csproj", "{AFAB1E8F-D2C6-4DE0-9AFF-ACE6E0515581}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{35DF9716-88CF-40E3-9937-4900B34D5858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35DF9716-88CF-40E3-9937-4900B34D5858}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35DF9716-88CF-40E3-9937-4900B34D5858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAB1E8F-D2C6-4DE0-9AFF-ACE6E0515581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAB1E8F-D2C6-4DE0-9AFF-ACE6E0515581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAB1E8F-D2C6-4DE0-9AFF-ACE6E0515581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAB1E8F-D2C6-4DE0-9AFF-ACE6E0515581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

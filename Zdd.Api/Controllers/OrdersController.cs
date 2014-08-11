@@ -13,6 +13,7 @@ using Zdd.Domain.Models;
 
 namespace Zdd.Api.Controllers
 {
+    [RoutePrefix("api/orders")]
     [NHibernateTransaction]
     public class OrdersController : ApiController
     {

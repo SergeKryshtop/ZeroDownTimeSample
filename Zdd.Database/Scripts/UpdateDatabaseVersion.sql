@@ -1,5 +1,5 @@
 ﻿/* Adding only new version */
-IF OBJECT_ID(N'SchemaVersion') IS NOT NULL
+IF OBJECT_ID(N'DatabaseVersion') IS NOT NULL
 BEGIN
 MERGE [dbo].[DatabaseVersion] AS target
 USING (

@@ -10,8 +10,6 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
---Login and user creating
-:r .\SqlLogins.sql
 
 --Reading variables
 :r .\ScriptVariables.sql

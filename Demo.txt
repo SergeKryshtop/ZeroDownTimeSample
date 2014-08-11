@@ -18,3 +18,5 @@ SSDT
 
 
 Rules: Not to use default contraint names
+
+(1075,1): SQL72014: .Net SqlClient Data Provider: Msg 1712, Level 16, State 1, Line 305 Online index operations can only be performed in Enterprise edition of SQL Server.

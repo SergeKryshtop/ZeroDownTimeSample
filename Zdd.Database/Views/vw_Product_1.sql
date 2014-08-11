@@ -26,7 +26,6 @@
       ,[SellStartDate]
       ,[SellEndDate]
       ,[DiscontinuedDate]
-      ,[rowguid]
       ,[ModifiedDate]
   FROM [dbo].[Product]
 
