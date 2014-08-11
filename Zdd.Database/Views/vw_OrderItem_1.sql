@@ -1,0 +1,13 @@
+﻿CREATE VIEW [dbo].[vw_OrderItem_1]
+	AS 
+	SELECT [TenantId]
+	  ,[Id]
+      ,[OrderId]
+      ,[ProductId]
+      ,[OrderQty]
+      ,[UnitPrice]
+      ,[LineTotal]
+      ,[Sent]
+      ,[Received]
+      ,[Rejected]
+  FROM [dbo].[OrderItem]

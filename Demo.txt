@@ -1,0 +1,20 @@
+Problems covered:
+
+1. Breaking change - change type of the column
+2. Breaking change - 
+2. Non-breaking change - Adding new columns
+3. Problem: New column has been added to the middle of the table
+4. 
+
+
+
+
+
+SSDT
+1. New Database
+2. SQL Server Object Explorer
+3. Reverse Engineering
+- SQLCMD mode
+
+
+Rules: Not to use default contraint names

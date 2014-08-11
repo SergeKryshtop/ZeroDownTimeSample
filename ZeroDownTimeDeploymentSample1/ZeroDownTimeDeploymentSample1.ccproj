@@ -37,24 +37,25 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Zdd.ApiContent\" />
     <Folder Include="Zdd.WebApiContent" />
-    <Folder Include="WorkerRole1Content\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Zdd.ApiContent\diagnostics.wadcfg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Zdd.WebApiContent\diagnostics.wadcfg">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="WorkerRole1Content\diagnostics.wadcfg">
-      <SubType>Content</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebRole1\Zdd.WebApi.csproj">
-      <Name>Zdd.WebApi</Name>
-      <Project>{059995be-7537-4e7a-8bfe-98e0280b2669}</Project>
+    <ProjectReference Include="..\Zdd.Api\Zdd.Api.csproj">
+      <Name>Zdd.Api</Name>
+      <Project>{bd6f3988-54d8-4cd4-bf5e-c9b09881130d}</Project>
       <Private>True</Private>
       <RoleType>Web</RoleType>
-      <RoleName>Zdd.WebApi</RoleName>
+      <RoleName>Zdd.Api</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
   </ItemGroup>
   <!-- Import the target files for this project template -->

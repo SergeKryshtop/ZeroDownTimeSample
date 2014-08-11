@@ -1,13 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "ZeroDownTimeDeploymentSample1", "ZeroDownTimeDeploymentSample1\ZeroDownTimeDeploymentSample1.ccproj", "{A2E19911-D864-4A85-91DF-9BAD70604910}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zdd.WebApi", "WebRole1\Zdd.WebApi.csproj", "{059995BE-7537-4E7A-8BFE-98E0280B2669}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Zdd.Database", "Zdd.Database\Zdd.Database.sqlproj", "{002975C5-2FC1-43A7-9BE1-80697B1355CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zdd.Api", "Zdd.Api\Zdd.Api.csproj", "{BD6F3988-54D8-4CD4-BF5E-C9B09881130D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scenario", "Scenario", "{571E9129-8CA3-4F2D-9D7E-2697EBB76865}"
+	ProjectSection(SolutionItems) = preProject
+		Demo.txt = Demo.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zdd.Domain", "ZddDomain\Zdd.Domain.csproj", "{DE384A3A-A11E-44C0-9BCD-140049F4D55D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zdd.Persistance", "Zdd.Persistance\Zdd.Persistance.csproj", "{35DF9716-88CF-40E3-9937-4900B34D5858}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +28,24 @@ Global
 		{A2E19911-D864-4A85-91DF-9BAD70604910}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2E19911-D864-4A85-91DF-9BAD70604910}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2E19911-D864-4A85-91DF-9BAD70604910}.Release|Any CPU.Build.0 = Release|Any CPU
-		{059995BE-7537-4E7A-8BFE-98E0280B2669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{059995BE-7537-4E7A-8BFE-98E0280B2669}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{059995BE-7537-4E7A-8BFE-98E0280B2669}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{059995BE-7537-4E7A-8BFE-98E0280B2669}.Release|Any CPU.Build.0 = Release|Any CPU
 		{002975C5-2FC1-43A7-9BE1-80697B1355CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{002975C5-2FC1-43A7-9BE1-80697B1355CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{002975C5-2FC1-43A7-9BE1-80697B1355CF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{002975C5-2FC1-43A7-9BE1-80697B1355CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{002975C5-2FC1-43A7-9BE1-80697B1355CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{002975C5-2FC1-43A7-9BE1-80697B1355CF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BD6F3988-54D8-4CD4-BF5E-C9B09881130D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6F3988-54D8-4CD4-BF5E-C9B09881130D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6F3988-54D8-4CD4-BF5E-C9B09881130D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6F3988-54D8-4CD4-BF5E-C9B09881130D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE384A3A-A11E-44C0-9BCD-140049F4D55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE384A3A-A11E-44C0-9BCD-140049F4D55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE384A3A-A11E-44C0-9BCD-140049F4D55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE384A3A-A11E-44C0-9BCD-140049F4D55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DF9716-88CF-40E3-9937-4900B34D5858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35DF9716-88CF-40E3-9937-4900B34D5858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35DF9716-88CF-40E3-9937-4900B34D5858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35DF9716-88CF-40E3-9937-4900B34D5858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

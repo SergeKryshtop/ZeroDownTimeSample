@@ -1,6 +1,8 @@
 ﻿CREATE TABLE [dbo].[ProductCategory]
 (
-    [Id] INT NOT NULL PRIMARY KEY IdENTITY(1,1),
+    [TenantId] BIGINT NOT NULL,
+    [Id] INT NOT NULL,
     [Name] nvarchar(128) NOT NULL,
-    [OrderIndex] int NOT NULL DEFAULT(100)
+    [OrderIndex] int NOT NULL DEFAULT(100),
+	CONSTRAINT PK__ProductCategory PRIMARY KEY CLUSTERED(TenantId ASC, Id ASC)
 )

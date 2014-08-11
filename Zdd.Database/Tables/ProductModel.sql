@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[ProductModel]
 (
-	[Id] INT NOT NULL IdENTITY(1,1),
+	[TenantId] BIGINT NOT NULL,
+	[Id] INT NOT NULL,
 	[Name] nvarchar(255) NOT NULL,
 	[CatalogDescription] [xml] NULL,
 	[Instructions] [xml] NULL,
-	[rowguid] [uniqueidentifier] ROWGUIdCOL  NOT NULL CONSTRAINT [DF__ProductModel__rowguid]  DEFAULT (newid()),
-	[ModifiedDate] [datetime] NOT NULL CONSTRAINT [DF__ProductModel__ModifiedDate]  DEFAULT (getutcdate()),
-	CONSTRAINT [PK_ProductModel_ProductModelId] PRIMARY KEY CLUSTERED ( Id ASC)
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+	[ModifiedDateTime] [datetime] NOT NULL CONSTRAINT [DF__ProductModel__ModifiedDateTime]  DEFAULT (getutcdate()),
+	CONSTRAINT [PK__ProductModel] PRIMARY KEY CLUSTERED (Id ASC, TenantId ASC)
+) 
 
 GO
 

@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [dbo].[Product]
 (
-    [Id] INT NOT NULL IdENTITY(1,1),
+	[TenantId] BIGINT NOT NULL,
+    [Id] BIGINT NOT NULL,
     [Name] NVARCHAR(128) NOT NULL,
 	[ProductNumber] [nvarchar](25) NOT NULL,
     [Description] nvarchar(max),
@@ -27,9 +28,10 @@
 	[DiscontinuedDate] [datetime] NULL,
 	[rowguid] [uniqueidentifier] ROWGUIdCOL  NOT NULL CONSTRAINT [DF_Product_rowguid]  DEFAULT (newid()),
 	[ModifiedDate] [datetime] NOT NULL  CONSTRAINT [DF_Product_ModifiedDate]  DEFAULT (getdate()),
-	CONSTRAINT [PK__Product] PRIMARY KEY CLUSTERED (Id ASC),
-	CONSTRAINT [FK__Product__ProductModel_ProductModelId] FOREIGN KEY([ProductModelId]) REFERENCES dbo.[ProductModel] (Id),
-	CONSTRAINT [FK__Product__ProductSubcategory_ProductSubcategoryId] FOREIGN KEY([ProductSubCategoryId]) REFERENCES dbo.[ProductSubCategory] (Id),
+	CONSTRAINT [PK__Product] PRIMARY KEY CLUSTERED (TenantId ASC, Id ASC),
+	CONSTRAINT [UQ__Product] UNIQUE (Id ASC),
+	CONSTRAINT [FK__Product__ProductModel] FOREIGN KEY([ProductModelId], TenantId) REFERENCES dbo.[ProductModel] (Id, TenantId),
+	CONSTRAINT [FK__Product__ProductSubcategory] FOREIGN KEY([ProductSubCategoryId], TenantId) REFERENCES dbo.[ProductSubCategory] (Id, TenantId),
 	CONSTRAINT [FK__Product__UnitMeasure_SizeUnitMeasureCode] FOREIGN KEY([SizeUnitMeasureCode]) REFERENCES dbo.[UnitMeasure] ([UnitMeasureCode]),
 	CONSTRAINT [FK__Product__UnitMeasure_WeightUnitMeasureCode] FOREIGN KEY([WeightUnitMeasureCode]) REFERENCES dbo.[UnitMeasure] ([UnitMeasureCode])
 

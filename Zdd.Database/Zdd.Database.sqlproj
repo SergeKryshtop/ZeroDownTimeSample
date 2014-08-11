@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -59,6 +60,10 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Snapshots" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="Scripts" />
+    <Folder Include="Security" />
+    <Folder Include="Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Order.sql" />
@@ -69,9 +74,36 @@
     <Build Include="Tables\UnitMeasure.sql" />
     <Build Include="Tables\ProductModel.sql" />
     <Build Include="Tables\ProductSubCategory.sql" />
+    <Build Include="StoredProcedures\GetDeprecatedObjects.sql" />
+    <Build Include="StoredProcedures\GenerateDeprecatedObjectsDropScript.sql" />
+    <None Include="Scripts\DeprecatedObjects.sql" />
+    <None Include="Scripts\Dictionary.sql" />
+    <None Include="Scripts\Indexes.sql" />
+    <None Include="Scripts\Script.PostDeployment1.sql" />
+    <None Include="Scripts\Script.PreDeployment1.sql" />
+    <None Include="Scripts\ScriptVariables.sql" />
+    <None Include="Scripts\SqlCmdVariables.sql" />
+    <None Include="Scripts\UpdateDatabaseObjects.sql" />
+    <None Include="Scripts\UpdateDatabaseVersion.sql" />
+    <None Include="Scripts\Version.sql" />
+    <Build Include="Tables\DatabaseObjectData.sql" />
+    <Build Include="Tables\SchemaVersion.sql" />
+    <Build Include="Tables\DatabaseUpdateLog.sql" />
+    <Build Include="Security\zddDbUser.sql" />
+    <Build Include="Security\zddDbUser_1.sql" />
+    <Build Include="Tables\TenantHiLow.sql" />
+    <Build Include="Views\vw_Order_1.sql" />
+    <Build Include="Views\vw_OrderItem_1.sql" />
+    <Build Include="Views\vw_Product_1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\Zdd.Database_20140803_14-00-44.dacpac" />
     <None Include="Zdd.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\BackwardCompatibility.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\BackwardCompatibility.PreDeployment.sql" />
   </ItemGroup>
 </Project>
